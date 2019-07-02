@@ -1,0 +1,1 @@
+git clone "https url" - to clone git repositry in local repositry.
