@@ -1,1 +1,111 @@
 git clone "https url" - to clone git repositry in local repositry.
+
+git add 'file name' - means changes are in local repository (stagging area)
+
+git commit -m 'commit message' - commit change of local repo to local git repo.
+
+git push origin 'branch-name' - origin refer to the github copy of our repository.(remote git repo)
+
+git ls-files - gives list of tracked files by git in current repository
+
+git checkout -- 'file name' -to discard changes to last commit.
+
+git reset HEAD 'file name' to unstage the file.
+
+git mv 'old name' 'new name' - to rename a file using git (the file then will be in stagged not commited)
+
+rm -rf 'file name' to remove a file (r means recursively and f means forcefully)
+
+///history////
+to see history of commits
+
+git log - to see the history of commits.
+
+git log --abbrev-commit - to see shorten commit id's
+
+git log --oneline --graph --decorate - to see commit history as a list with one line 
+
+git log --oneline - to see commit with commit id and commit message only.
+
+git log commitid1...commitid2 - to see commit in range
+
+git log --since="3 days ago" - to see commit happend in last 3 days.
+
+git log -- 'file name' - to see commit of perticular file
+
+git show commitid - to see details of perticular commit
+
+////Alias/////
+To create a Alias
+
+git config --global alias.[your command name] "the command for you want to create alias "
+i.e git config --global alias.hist "log --oneline --graph --decorate" 
+
+
+code ~/.gitconfig to open git config file where we can manage alias and user info etc.
+
+
+////comparisions///
+HEAD - means last commit on current branch
+
+git diff -this command will show difference in stagged files and working directory files that are not yet stagged
+
+git diff HEAD - to see difference between local git repository and working directory
+
+git diff --stagged HEAD - to see difference between stagged files and git repository
+
+git diff -- 'file name' to see difference for a single file since last commit
+
+git diff commitid1 commitid2 to see difference between two commits.
+
+git diff HEAD HEAD^ to see difference between last two commits
+
+git diff localbranch remotebranch - to see difference between local branch and remote branch
+i.e git diff master origin/master
+
+///branching and merging////
+
+git branch -to see local branches
+
+git branch -a - to see local and remote branches
+
+git branch -m oldnameofbranch newnameofbranch - to rename a local branch
+-m = move
+
+git branch -d branchname -to delete a branch
+-d= delete
+
+git diff targebranch sourcebranch - to see difference between two branches
+i.e git diff master feature/demo
+note: it's good practice to see diff between two branches before merging them .
+
+git merge branch-name - to merge a branch.
+note: first checkout to targebranch in you want to merge other targebranch then use merge command
+
+git merge branch-name -m "merge message" - to add a merging message
+
+git diff onebranch otherbranch - to see conflicts if any while merging
+note: after solving conflicts commit the changes then retry merge
+
+////rebasing////
+
+git rebase parent-branch -to rebase all the changes of parent branch to child branch
+
+git rebase --abort -to abort the rebase process
+
+git rebase --continue - to continue rebase process after solving conflicts
+
+git pull --rebase origin parent-branch - to do pull and rebasing at the same time
+note: helpfull when some other developer has done changes in same branch(remote) 
+
+////stashing/////
+
+git stash - to discard any changes that are not in stagged area or not commited
+note: by default 'git stash' command executes as 'git stash save' so we can revert the stashed changes.
+it will keep track of those files that are tracked by git
+
+git stash -u
+
+git stash list - gives list of all the stashes 
+
+git stash drop - to drop all the stash entry.
