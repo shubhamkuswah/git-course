@@ -104,8 +104,54 @@ git stash - to discard any changes that are not in stagged area or not commited
 note: by default 'git stash' command executes as 'git stash save' so we can revert the stashed changes.
 it will keep track of those files that are tracked by git
 
-git stash -u
+git stash -u - to track the untracked files with git
+
+git stash apply - to unstash last stash.
+
+git stash apply stash@{number} - tos unstash perticular stash
 
 git stash list - gives list of all the stashes 
 
 git stash drop - to drop all the stash entry.
+
+git stash save "message" - to save stash with message to identify it easily
+
+git stash show stash@{number} -to display detail of perticular stash.
+
+git stash clear - to clear all the saved stashes
+
+//////tagging/////
+tags are just labels that we can apply in any history-it's just a marker on a perticular comment
+
+git tag tag-name -to give a tag name to last commit 
+
+git tag --list -gives list of tags
+
+git show tag-name - show associated commit with tag
+
+git tag --delete tag-name - to delete a tag
+
+git tag -a tag-name -to create annoted tag ,tag with message    
+
+git tag tag-name -m "message" -to create a tag with message
+
+git diff tag1 tag2 -to see difference between two tags
+
+git tag -a tag-name commit-id -to associate a tag with any commit
+
+git tag -a tag-name old-commit-id -f new-commit-id - to associate existing tag to another commit
+
+git push origin tag-name -to push tag to github
+
+git push origin branch-name --tags -to push all the tags to github
+
+git push origin :tag-name -to delete tag from github repo
+
+/////reset and reflog ///
+
+git reset HEAD^1 -will reset commits by one level
+
+git reset HEAD^ -will reset last commit
+
+git reflog - to see history of commits and reset commits
+
