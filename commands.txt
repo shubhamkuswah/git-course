@@ -153,5 +153,6 @@ git reset HEAD^1 -will reset commits by one level
 
 git reset HEAD^ -will reset last commit
 
-git reflog - to see history of commits and reset commits
+git reflog - to see history of commits and reset commits 
+sdfshdfhdshfh
 
